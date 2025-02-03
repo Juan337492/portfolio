@@ -7,7 +7,6 @@
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
   <title>PeregrineInventory - Android Narrative</title>
 
-
   <meta property="og:title" content="Juan Rodriguez portfolio" />
   <meta property="og:locale" content="en_US" />
   <meta name="description" content="Juan Rodriguez portfolio website." />
@@ -30,252 +29,230 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+<!-- Added overflow-x-hidden to prevent any accidental horizontal scroll -->
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative overflow-x-hidden" x-data="{ mobileMenu: false }">
   <div id="main" class="relative">
     <!-- Navigation Bar -->
-    <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
-    ">
-          <div class="container flex items-center justify-between">
-            <div>
-              <a href="index.html">
-                <img src="assets/img/hello.svg" class="w-20 lg:w-20" alt="logo image" />
-              </a>
-            </div>
-            <div class="hidden lg:block">
-              <ul class="flex items-center">
-  
-                <li class="group pl-6">
-                  <a href="index.html">
-                  <span
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Home</span>
-  
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                  </a>
-                </li>
-  
-                <li class="group pl-6">
-                  <a href="peregrineInventory.html">
-                  <span
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Inventory App Narrative</span>
-  
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                  </a>
-                </li>
-  
-                <li class="group pl-6">
-                  <a href="grocery.html">
-                  <span
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Grocery App Narrative</span>
-  
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                  </a>
-                </li>
-  
-                <li class="group pl-6">
-                  <a href="shelter.html">
-                  <span
-                    class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Shelter App Narrative</span>
-  
-                  <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="block lg:hidden">
-              <button @click="mobileMenu = true">
-                <i class="bx bx-menu text-4xl text-white"></i>
-              </button>
-            </div>
-          </div>
+    <div class="w-full z-50 top-0 py-3 sm:py-5 absolute">
+      <div class="container flex items-center justify-between">
+        <div>
+          <a href="index.html">
+            <img src="assets/img/hello.svg" class="w-20 lg:w-20" alt="logo image" />
+          </a>
         </div>
-
-      <!-- Mobile Navigation Overlay -->
-      <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
-        :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
-        <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
-          <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false">
-            <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="Close menu" />
-          </button>
-          <ul class="mt-8 flex flex-col">
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+        <div class="hidden lg:block">
+          <ul class="flex items-center">
+            <li class="group pl-6">
+              <a href="index.html">
+                <span class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Home</span>
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </a>
             </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#services')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+            <li class="group pl-6">
+              <a href="peregrineInventory.html">
+                <span class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Inventory App Narrative</span>
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </a>
             </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#portfolio')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+            <li class="group pl-6">
+              <a href="grocery.html">
+                <span class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Grocery App Narrative</span>
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </a>
             </li>
-            <li class="py-2">
-              <span @click="triggerMobileNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+            <li class="group pl-6">
+              <a href="shelter.html">
+                <span class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Shelter App Narrative</span>
+                <span class="block h-0.5 w-full bg-transparent group-hover:bg-yellow"></span>
+              </a>
             </li>
           </ul>
         </div>
+        <div class="block lg:hidden">
+          <button @click="mobileMenu = true" aria-label="Open mobile menu">
+            <i class="bx bx-menu text-4xl text-white"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+      :class="{ 'opacity-100 pointer-events-auto': mobileMenu }">
+      <div class="absolute right-0 min-h-screen w-2/3 bg-primary py-4 px-8 shadow md:w-1/3">
+        <button class="absolute top-0 right-0 mt-4 mr-4" @click="mobileMenu = false" aria-label="Close mobile menu">
+          <img src="assets/img/icon-close.svg" class="h-10 w-auto" alt="Close menu" />
+        </button>
+        <ul class="mt-8 flex flex-col">
+          <li class="py-2">
+            <span @click="triggerMobileNavItem('#about')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">About</span>
+          </li>
+          <li class="py-2">
+            <span @click="triggerMobileNavItem('#services')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Services</span>
+          </li>
+          <li class="py-2">
+            <span @click="triggerMobileNavItem('#portfolio')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Portfolio</span>
+          </li>
+          <li class="py-2">
+            <span @click="triggerMobileNavItem('#contact')" class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white">Contact</span>
+          </li>
+        </ul>
       </div>
     </div>
     <!-- End of Navigation Bar -->
   </div>
 
-      <!--Hero image-->
-      <div class="relative bg-cover bg-center bg-no-repeat py-8"
-      style="background-image: url(assets/img/bg-hero.jpg)">
-      <div
-        class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat">
-      </div>
-  
-      <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
-        <div class="flex flex-col items-center justify-center lg:flex-row">
-          <div class="rounded-full shadow-xl">
-            <img src="assets/img/Andriod.svg" class="h-48 rounded-full sm:h-56" alt="me" />
-          </div>
-          <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
-            <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
-              Software Engineering and Design Narrative
-            </h1>
-            <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
-              <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
-                <p class="font-body text-lg uppercase text-white">Let's connect</p>
-                <div class="hidden sm:block">
-                  <i class="bx bx-chevron-right text-3xl text-yellow"></i>
-                </div>
+  <!-- Hero Image -->
+  <div class="relative bg-cover bg-center bg-no-repeat py-8" style="background-image: url(assets/img/bg-hero.jpg)">
+    <div class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to bg-cover bg-center bg-no-repeat"></div>
+    <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
+      <div class="flex flex-col items-center justify-center lg:flex-row">
+        <div class="rounded-full shadow-xl">
+          <img src="assets/img/Andriod.svg" class="h-48 rounded-full sm:h-56" alt="Software Engineering and Design Narrative" />
+        </div>
+        <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+          <h1 class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl">
+            Software Engineering and Design Narrative
+          </h1>
+          <div class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start">
+            <div class="flex items-center justify-center pl-0 sm:justify-start md:pl-1">
+              <p class="font-body text-lg uppercase text-white">Let's connect</p>
+              <div class="hidden sm:block">
+                <i class="bx bx-chevron-right text-3xl text-yellow"></i>
               </div>
-              <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-                <a href="https://www.linkedin.com/in/juan-rodriguez-tech/" class="pl-4">
-                  <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
-                </a>
-                <a href="https://github.com/Juan337492" class="pl-4">
-                  <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
-                </a>
-              </div>
+            </div>
+            <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+              <a href="https://www.linkedin.com/in/juan-rodriguez-tech/" class="pl-4">
+                <i class="bx bxl-linkedin text-2xl text-white hover:text-yellow"></i>
+              </a>
+              <a href="https://github.com/Juan337492" class="pl-4">
+                <i class="bx bxl-github text-2xl text-white hover:text-yellow"></i>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  <div>
-</div>
-
-<!-- Main Content Placeholder (Optional) -->
-<div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-60 lg:pb-48" style="padding-top: 5rem;" >
-  <h1 class="text-center font-header text-4xl text-primary">
-    PeregrineInventory - Mobile Inventory App Narrative
-  </h1>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Overview</h2>
-    <p class="font-body text-lg mt-4">
-      The Mobile Inventory App was initially developed as part of the CS360 course, which focused on mobile architecture and programming. The app is designed to allow users to manage inventory through basic CRUD operations—adding, editing, and deleting items—and provides a straightforward user interface for tracking item quantities and details. The artifact served as an opportunity to apply mobile development principles using Android Studio, Java, and SQLite databases.
-    </p>
-  </section>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Why Include This Artifact in the ePortfolio?</h2>
-    <p class="font-body text-lg mt-4">
-      This artifact was chosen for my ePortfolio because it demonstrates key software development skills, including object-oriented programming, database management, and user interface design. The project showcases my ability to build a functional mobile application from the ground up, emphasizing both backend logic and front-end usability.
-    </p>
-    <ul class="list-disc ml-8 mt-4">
-      <li>
-        The integration of SQLite databases to perform CRUD operations efficiently, showcasing my understanding of database design and interaction.
-      </li>
-      <li>
-        The use of custom adapters in <code>CustomItemsList</code> for dynamically rendering data, reflecting my grasp of Android development patterns.
-      </li>
-      <li>
-        New features, such as bulk deletion of inventory items, SMS notifications, and a "Forgot Password" recovery system, further demonstrate my ability to extend functionality and meet evolving user requirements.
-      </li>
-    </ul>
-  </section>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Improvements Made to the Artifact</h2>
-    <ul class="list-disc ml-8 mt-4">
-      <li>
-        <strong>Expanded Functionality:</strong> A "Delete All Items" feature with confirmation dialogs.
-      </li>
-      <li>
-        <strong>SMS Notifications:</strong> Real-time alerts when an item's quantity reaches zero.
-      </li>
-      <li>
-        <strong>Forgot Password Feature:</strong> A secure method for users to recover their credentials.
-      </li>
-      <li>
-        <strong>Database Enhancements:</strong> Bulk operations like deleting all items and users, along with additional methods for reading and managing individual records.
-      </li>
-      <li>
-        <strong>User Interface and Experience:</strong> Improved popup dialogs for editing and managing inventory, with visual feedback such as color-coded quantity cells and toast messages.
-      </li>
-    </ul>
-  </section>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Course Outcomes Addressed</h2>
-    <ul class="list-disc ml-8 mt-4">
-      <li>
-        <strong>Design and Evaluate Computing Solutions:</strong> The expanded functionality (e.g., SMS notifications and password recovery) demonstrates my ability to design solutions that meet user needs while balancing simplicity and extensibility.
-      </li>
-      <li>
-        <strong>Use Innovative Techniques and Tools:</strong> Leveraging Android Studio, Java, and SQLite showcases my ability to use modern development tools effectively.
-      </li>
-      <li>
-        <strong>Develop a Security Mindset:</strong> Including the "Forgot Password" feature highlights my awareness of user data privacy and secure recovery processes.
-      </li>
-    </ul>
-  </section>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Reflection on the Process</h2>
-    <h3 class="font-header text-xl text-primary mt-4">Key Learnings:</h3>
-    <ul class="list-disc ml-8 mt-2">
-      <li>
-        The importance of modularity in design: Breaking functionality into reusable components, such as the <code>DeleteItems</code> and <code>SMSNotification</code> classes, improved maintainability.
-      </li>
-      <li>
-        Real-world application of Android permissions: Implementing SMS functionality required understanding how to request and handle user permissions dynamically.
-      </li>
-      <li>
-        Balancing usability and functionality: Features like confirmation dialogs and visual feedback (e.g., color-coded cells) significantly enhanced user interaction.
-      </li>
-    </ul>
-    <h3 class="font-header text-xl text-primary mt-4">Challenges Faced:</h3>
-    <ul class="list-disc ml-8 mt-2">
-      <li>
-        Implementing SMS notifications was technically challenging due to Android's stringent security and permissions requirements, which required thorough research on best practices.
-      </li>
-      <li>
-        Ensuring seamless integration of new features with existing logic required careful planning and testing, especially when modifying the database schema and adapter logic.
-      </li>
-    </ul>
-  </section>
-  
-  <section>
-    <h2 class="font-header text-2xl text-primary mt-8">Conclusion</h2>
-    <p class="font-body text-lg mt-4">
-      This artifact demonstrates my growth as a developer, showcasing my ability to design and enhance functional, secure, and user-focused applications. Enhancing the Mobile Inventory App was both challenging and rewarding, equipping me with skills and insights that will benefit my future work as a software engineer.
-    </p>
-  </section>
-
-  <!-- App Images -->
-<div style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 1rem; padding-top: 5rem">
-  <img src="assets/img/applogin.png" alt="Register Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
-  <img src="assets/img/register.png" alt="Register Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
-  <img src="assets/img/addnewitem.png" alt="Add New Item Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
-  <img src="assets/img/inventory .png" alt="Inventory Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
-</div>
-
-
-
-</div>
-
-<div class="w-full text-center">
-  <p style="padding-bottom: 1rem;">Click here for GitHub Link</p>
-  <a href="https://github.com/Juan337492/PeregrineInventory/tree/main">
-    <i class="bx bxl-github text-2xl text-black hover:text-yellow" style="font-size: 4rem;"></i>
-  </a>
   </div>
 
-    
+  <!-- Main Content -->
+  <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-60 lg:pb-48" style="padding-top: 5rem;">
+    <h1 class="text-center font-header text-4xl text-primary">
+      PeregrineInventory - Mobile Inventory App Narrative
+    </h1>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Overview</h2>
+      <p class="font-body text-lg mt-4">
+        The Mobile Inventory App was initially developed as part of the CS360 course, which focused on mobile architecture and programming. The app is designed to allow users to manage inventory through basic CRUD operations—adding, editing, and deleting items—and provides a straightforward user interface for tracking item quantities and details. The artifact served as an opportunity to apply mobile development principles using Android Studio, Java, and SQLite databases.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Why Include This Artifact in the ePortfolio?</h2>
+      <p class="font-body text-lg mt-4">
+        This artifact was chosen for my ePortfolio because it demonstrates key software development skills, including object-oriented programming, database management, and user interface design. The project showcases my ability to build a functional mobile application from the ground up, emphasizing both backend logic and front-end usability.
+      </p>
+      <ul class="list-disc ml-8 mt-4">
+        <li>
+          The integration of SQLite databases to perform CRUD operations efficiently, showcasing my understanding of database design and interaction.
+        </li>
+        <li>
+          The use of custom adapters in <code>CustomItemsList</code> for dynamically rendering data, reflecting my grasp of Android development patterns.
+        </li>
+        <li>
+          New features, such as bulk deletion of inventory items, SMS notifications, and a "Forgot Password" recovery system, further demonstrate my ability to extend functionality and meet evolving user requirements.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Improvements Made to the Artifact</h2>
+      <ul class="list-disc ml-8 mt-4">
+        <li>
+          <strong>Expanded Functionality:</strong> A "Delete All Items" feature with confirmation dialogs.
+        </li>
+        <li>
+          <strong>SMS Notifications:</strong> Real-time alerts when an item's quantity reaches zero.
+        </li>
+        <li>
+          <strong>Forgot Password Feature:</strong> A secure method for users to recover their credentials.
+        </li>
+        <li>
+          <strong>Database Enhancements:</strong> Bulk operations like deleting all items and users, along with additional methods for reading and managing individual records.
+        </li>
+        <li>
+          <strong>User Interface and Experience:</strong> Improved popup dialogs for editing and managing inventory, with visual feedback such as color-coded quantity cells and toast messages.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Course Outcomes Addressed</h2>
+      <ul class="list-disc ml-8 mt-4">
+        <li>
+          <strong>Design and Evaluate Computing Solutions:</strong> The expanded functionality (e.g., SMS notifications and password recovery) demonstrates my ability to design solutions that meet user needs while balancing simplicity and extensibility.
+        </li>
+        <li>
+          <strong>Use Innovative Techniques and Tools:</strong> Leveraging Android Studio, Java, and SQLite showcases my ability to use modern development tools effectively.
+        </li>
+        <li>
+          <strong>Develop a Security Mindset:</strong> Including the "Forgot Password" feature highlights my awareness of user data privacy and secure recovery processes.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Reflection on the Process</h2>
+      <h3 class="font-header text-xl text-primary mt-4">Key Learnings:</h3>
+      <ul class="list-disc ml-8 mt-2">
+        <li>
+          The importance of modularity in design: Breaking functionality into reusable components, such as the <code>DeleteItems</code> and <code>SMSNotification</code> classes, improved maintainability.
+        </li>
+        <li>
+          Real-world application of Android permissions: Implementing SMS functionality required understanding how to request and handle user permissions dynamically.
+        </li>
+        <li>
+          Balancing usability and functionality: Features like confirmation dialogs and visual feedback (e.g., color-coded cells) significantly enhanced user interaction.
+        </li>
+      </ul>
+      <h3 class="font-header text-xl text-primary mt-4">Challenges Faced:</h3>
+      <ul class="list-disc ml-8 mt-2">
+        <li>
+          Implementing SMS notifications was technically challenging due to Android's stringent security and permissions requirements, which required thorough research on best practices.
+        </li>
+        <li>
+          Ensuring seamless integration of new features with existing logic required careful planning and testing, especially when modifying the database schema and adapter logic.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Conclusion</h2>
+      <p class="font-body text-lg mt-4">
+        This artifact demonstrates my growth as a developer, showcasing my ability to design and enhance functional, secure, and user-focused applications. Enhancing the Mobile Inventory App was both challenging and rewarding, equipping me with skills and insights that will benefit my future work as a software engineer.
+      </p>
+    </section>
+
+    <!-- App Images -->
+    <!-- Added flex-wrap to allow the images to wrap on smaller screens -->
+    <div style="display: flex; flex-wrap: wrap; flex-direction: row; align-items: center; justify-content: center; gap: 1rem; padding-top: 5rem">
+      <img src="assets/img/applogin.png" alt="Register Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
+      <img src="assets/img/register.png" alt="Register Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
+      <img src="assets/img/addnewitem.png" alt="Add New Item Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
+      <img src="assets/img/inventory .png" alt="Inventory Screen" style="width: 30rem; height: 40rem; max-width: 100%;">
+    </div>
+  </div>
+
+  <div class="w-full text-center">
+    <p style="padding-bottom: 1rem;">Click here for GitHub Link</p>
+    <a href="https://github.com/Juan337492/PeregrineInventory/tree/main">
+      <i class="bx bxl-github text-2xl text-black hover:text-yellow" style="font-size: 4rem;"></i>
+    </a>
+  </div>
+
   <!-- Bottom Footer -->
-  <div  class="bg-primary mt-8">
+  <div class="bg-primary mt-8">
     <div class="container flex flex-col justify-between py-6 sm:flex-row">
       <p class="text-center font-body text-white md:text-left">
         © Copyright 2024. All rights reserved, Juan Rodriguez.
