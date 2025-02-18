@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-  <title>PeregrineInventory - Android Narrative</title>
+  <title>Databases Narrative - Animal shelter Narrative</title>
 
 
   <meta property="og:title" content="Juan Rodriguez portfolio" />
@@ -30,7 +30,7 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative" x-data="{ mobileMenu: false }">
+<body :class="{ 'overflow-hidden max-h-screen': mobileMenu }" class="relative overflow-x-hidden" x-data="{ mobileMenu: false }">
   <div id="main" class="relative">
     <!-- Navigation Bar -->
     <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
@@ -161,16 +161,90 @@
       </div>
     </div>
 
-  <div>
-    <!-- Main Content Placeholder (Optional) -->
-    <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48">
-        <h1 class="text-center font-header text-4xl text-primary">Animal shelter</h1>
-        <p class="text-center font-body text-lg">Narrative content goes here.</p>
-  </div>
-  </div>
+  <!-- Main Content -->
+  <div class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-60 lg:pb-48" style="padding-top: 5rem;">
+    <h1 class="text-center font-header text-4xl text-primary">
+      CornerGrocerApp Narrative
+    </h1>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Overview</h2>
+      <p class="font-body text-lg mt-4">
+        The Animal Shelter Dashboard is a Python-based web application developed using Dash, MongoDB, and Plotly. Originally built during CS-340, the project serves as a data management and visualization tool for tracking, filtering,
+        and analyzing animal rescue records stored in a MongoDB database. The dashboard provides interactive filtering, data visualization, and geo-location mapping to help administrators and shelter staff manage records efficiently.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Why Include This Artifact in the ePortfolio?</h2>
+      <p class="font-body text-lg mt-4">
+        I selected the Animal Shelter Dashboard for my ePortfolio because it highlights my ability to design, develop, and optimize database-driven applications while integrating
+        interactive data visualization and real-time data management. This project is an excellent representation of my technical expertise in software engineering, databases, and full-stack development.
+      </p>
+      <ul class="list-disc ml-8 mt-4">
+            <li><strong>Advanced Database Management:</strong> The dashboard is powered by MongoDB, demonstrating my ability to implement efficient NoSQL database operations, including CRUD functionality, indexing, and aggregation pipelines for fast and scalable data retrieval.</li>
+            <li><strong>Data Visualization & User Interaction:</strong> The project showcases Dash and Plotly integration, allowing users to filter, visualize, and interact with animal shelter data dynamically. This skill is crucial in building data-driven applications that help users make informed decisions.</li>
+            <li><strong>Optimization and Performance Enhancements:</strong> Through query optimizations and efficient data handling, I improved the dashboard’s performance, ensuring that large datasets are processed quickly while maintaining a smooth user experience.</li>
+            <li><strong>Real-World Application:</strong> The Animal Shelter Dashboard is not just a conceptual project but a practical tool that could be used in real-world shelter management systems, reinforcing my ability to develop functional, scalable, and impactful software solutions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Improvements Made to the Artifact</h2>
+      <ul class="list-disc ml-8 mt-4">
+            <li><strong>Expanded Database:</strong> Added new animal categories (cats, parrots, hamsters) to diversify and improve the dataset, making it more representative of real-world shelter data.</li>
+            <li><strong>Optimized Data Retrieval:</strong> Implemented MongoDB aggregation pipelines to enhance query performance, allowing faster filtering, sorting, and data retrieval for large datasets.</li>
+            <li><strong>Improved Data Visualization:</strong> Integrated interactive pie charts to display breed distribution more effectively and enhanced the Dash dataTable to include real-time filtering and sorting, making data exploration more user-friendly.</li>
+            <li><strong>Geo-Location Mapping:</strong> Added Dash Leaflet integration to display animal locations on a map, helping users track animal rescues and shelters more effectively.</li>
+            <li><strong>Better Performance & Scalability:</strong> Optimized the CRUD operations to reduce database query time and ensure smooth performance when handling thousands of records.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Course Outcomes Addressed</h2>
+      <ul class="list-disc ml-8 mt-4">
+            <li><strong>Design and Evaluate Computing Solutions:</strong> The project effectively applies MongoDB, Dash, and Plotly to create a scalable and interactive data management system. 
+              The implementation of aggregation pipelines, optimized queries, and user-friendly visualizations demonstrates my ability to design and evaluate solutions that manage large datasets efficiently.</li>
+            <li><strong>Use of Innovative Techniques and Tools:</strong> This artifact showcases my ability to use modern development tools such as Dash, MongoDB, and Plotly to develop a full-stack data 
+              visualization application. The integration of geo-location mapping (Dash Leaflet), real-time filtering, and dynamic tables highlights my technical expertise in software development.</li>
+            <li><strong>Security and Error Handling:</strong> By improving database query performance and ensuring data integrity, I demonstrated a security-conscious approach to handling large datasets. 
+              The use of MongoDB authentication methods, input validation, and secure data handling ensures privacy and protection of shelter records.</li>
+              <li><strong>Employ Strategies for Collaboration and Decision-Making:</strong> The dashboard provides valuable insights through data visualization, enabling users (shelter staff or administrators)
+               to make informed decisions regarding animal placement, shelter resource management, and adoption trends.</li>
+              <li><strong>Professional Communication and Documentation:</strong> The project includes structured documentation, clean code, and detailed reporting, ensuring that the system is understandable, maintainable, and adaptable for future development.</li>
+      </ul>
+    </section>
+
     
+    <h3 class="font-header text-xl text-primary mt-4">Challenges Faced:</h3>
+<ul class="list-disc ml-8 mt-2">
+    <li>Expanding the MongoDB database while maintaining data integrity and consistency across records.</li>
+    <li>Optimizing MongoDB queries to improve retrieval speed without sacrificing accuracy, especially with larger datasets.</li>
+    <li>Ensuring seamless integration of new filtering options and visualization features without causing UI slowdowns.</li>
+    <li>Implementing geo-location mapping correctly by validating latitude and longitude data for accurate animal shelter tracking.</li>
+    <li>Balancing real-time updates and performance by optimizing Dash callbacks and database interactions.</li>
+</ul>
+
+    <section>
+      <h2 class="font-header text-2xl text-primary mt-8">Conclusion</h2>
+      <p class="font-body text-lg mt-4">
+        This artifact demonstrates my growth as a developer, showcasing my ability to design and optimize database-driven applications for efficiency, scalability, and real-world usability. Enhancing the Animal Shelter Dashboard was both challenging and rewarding, as it required me to refine my database management skills, optimize MongoDB queries, and implement interactive data visualization techniques.
+Working with large datasets in MongoDB helped me develop a deeper understanding of data indexing, aggregation pipelines, and query optimization, ensuring that the application runs smoothly and efficiently. The integration of geo-location tracking and real-time data filtering further enhanced the dashboard’s usability and responsiveness.
+This project has strengthened my expertise in database design, query performance tuning, and full-stack development, equipping me with valuable skills that I will apply in future software engineering roles.
+      </p>
+    </section>
+
+  </div>
+
+  <div class="w-full text-center">
+    <p style="padding-bottom: 1rem;">Click here for GitHub Link</p>
+    <a href="https://github.com/Juan337492/animal-shelter-dashboard">
+      <i class="bx bxl-github text-2xl text-black hover:text-yellow" style="font-size: 4rem;"></i>
+    </a>
+  </div>
+
   <!-- Bottom Footer -->
-  <div class="bg-primary">
+  <div class="bg-primary mt-8">
     <div class="container flex flex-col justify-between py-6 sm:flex-row">
       <p class="text-center font-body text-white md:text-left">
         © Copyright 2024. All rights reserved, Juan Rodriguez.
